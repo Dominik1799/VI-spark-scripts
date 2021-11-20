@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  spark:
+    image: fiitteam8/custom_spark:latest
+    hostname: sparkmaster
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_PID_DIR=/myTemp
+      - SPARK_LOCAL_DIRS=/myTemp
+    ports:
+      - '8080:8080'
+      - '8888:8888'
+    volumes:
+      - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
+      - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/master:/myTemp
+      - /mnt/d/Desktop/FIIT/7.semester/VI/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+  spark-worker-1:
+    image: fiitteam8/custom_spark:latest
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_PID_DIR=/myTemp
+      - SPARK_LOCAL_DIRS=/myTemp
+    volumes:
+      - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
+      - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/worker1:/myTemp
+  spark-worker-2:
+    image: fiitteam8/custom_spark:latest
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_PID_DIR=/myTemp
+      - SPARK_LOCAL_DIRS=/myTemp
+    volumes:
+      - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
+      - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/worker2:/myTemp
+
