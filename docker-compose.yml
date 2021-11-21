@@ -15,6 +15,7 @@ services:
     ports:
       - '8080:8080'
       - '8888:8888'
+      - '4040:4040'
     volumes:
       - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
       - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/master:/myTemp
