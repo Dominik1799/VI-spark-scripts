@@ -12,6 +12,8 @@ services:
       - SPARK_SSL_ENABLED=no
       - SPARK_PID_DIR=/myTemp
       - SPARK_LOCAL_DIRS=/myTemp
+      # - PYSPARK_DRIVER_PYTHON_OPTS=notebook --allow-root --ip=0.0.0.0
+      # - PYSPARK_DRIVER_PYTHON=jupyter
     ports:
       - '8080:8080'
       - '8888:8888'
@@ -32,6 +34,8 @@ services:
       - SPARK_SSL_ENABLED=no
       - SPARK_PID_DIR=/myTemp
       - SPARK_LOCAL_DIRS=/myTemp
+      # - PYSPARK_DRIVER_PYTHON_OPTS=notebook --allow-root --ip=0.0.0.0
+      # - PYSPARK_DRIVER_PYTHON=jupyter
     volumes:
       - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
       - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/worker1:/myTemp
@@ -47,6 +51,8 @@ services:
       - SPARK_SSL_ENABLED=no
       - SPARK_PID_DIR=/myTemp
       - SPARK_LOCAL_DIRS=/myTemp
+      # - PYSPARK_DRIVER_PYTHON_OPTS=notebook --allow-root --ip=0.0.0.0
+      # - PYSPARK_DRIVER_PYTHON=jupyter
     volumes:
       - /mnt/d/Desktop/FIIT/7.semester/VI/data/spark_mount:/data
       - /mnt/d/Desktop/FIIT/7.semester/VI/docker-tmp-volumes/worker2:/myTemp

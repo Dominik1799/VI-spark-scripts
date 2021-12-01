@@ -6,7 +6,7 @@ import re
 
 
 
-DUMP = "/data/skwiki-pages-articles.xml"
+DUMP = "/data/random/sk_countries_redirect.xml"
 TITLES =  "/data/all_titles_sk.txt"
 
 

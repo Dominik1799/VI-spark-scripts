@@ -1,0 +1,1 @@
+pyspark --master spark://sparkmaster:7077 --packages graphframes:graphframes:0.8.2-spark3.2-s_2.12
