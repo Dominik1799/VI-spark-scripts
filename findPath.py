@@ -1,12 +1,12 @@
 from graphframes import *
 from pyspark.sql import SparkSession
 
-DATA_LANGUAGE = "sk"
+DATA_LANGUAGE = "en"
 
 VERTICES = "/data/graphs/{lan}_vertices.jl".format(lan=DATA_LANGUAGE)
 EDGES = "/data/graphs/{lan}_edges.jl".format(lan=DATA_LANGUAGE)
 
-START = "Slovensko"
+START = "Slovakia"
 END = "Donald Trump"
 
 
